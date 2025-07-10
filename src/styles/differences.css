@@ -1,0 +1,118 @@
+/* Why Different Section */
+.why-different {
+  padding: 120px 0;
+  background: linear-gradient(135deg, #F5F3F1 0%, #F1EFE9 100%);
+  color: var(--color-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.why-different::before {
+  content: '';
+  position: absolute;
+  bottom: -15%;
+  right: -25%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(240, 230, 226, 0.4) 0%, transparent 70%);
+  border-radius: 45% 55% 35% 65%;
+  animation: gentle-float 15s ease-in-out infinite;
+}
+
+.why-different .section-header h2 {
+  color: var(--color-primary);
+}
+
+.why-different .section-header p {
+  color: var(--color-secondary);
+}
+
+.differences-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 var(--space-8);
+  position: relative;
+  z-index: 2;
+}
+
+.difference-item {
+  text-align: center;
+  padding: var(--space-6) var(--space-4);
+  background: var(--bg-primary);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-xl);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: var(--transition-slow);
+  position: relative;
+  overflow: hidden;
+}
+
+.difference-item:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12);
+}
+
+.difference-item:nth-child(even) {
+  margin-top: var(--space-4);
+}
+
+.difference-number {
+  font-size: 4.5rem;
+  font-weight: var(--font-medium);
+  color: var(--color-accent-rose);
+  margin-bottom: var(--space-3);
+  font-family: var(--font-serif);
+}
+
+.difference-icon {
+  width: 70px;
+  height: 70px;
+  background: var(--gradient-rose);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-4);
+  box-shadow: 0 8px 25px rgba(232, 213, 209, 0.3);
+}
+
+.difference-icon i {
+  font-size: 1.8rem;
+  color: var(--color-secondary);
+}
+
+.difference-item h3 {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-medium);
+  margin-bottom: var(--space-3);
+  color: var(--color-primary);
+  font-family: var(--font-serif);
+  line-height: 1.3;
+}
+
+.difference-item p {
+  color: var(--color-secondary);
+  line-height: 1.7;
+  font-size: var(--text-lg);
+  font-weight: var(--font-light);
+}
+
+/* Mobile Differences */
+@media (max-width: 768px) {
+  .differences-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .difference-item:nth-child(even) {
+    margin-top: 0;
+  }
+
+  .difference-number {
+    font-size: 3.5rem;
+  }
+}

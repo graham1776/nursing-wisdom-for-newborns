@@ -1,0 +1,219 @@
+/* Section Layouts */
+.section {
+  padding: 120px 0;
+  position: relative;
+}
+
+.section-primary {
+  background: var(--bg-primary);
+}
+
+.section-secondary {
+  background: var(--gradient-section);
+}
+
+/* Problem/Solution Section */
+.problem-solution {
+  padding: 120px 0;
+  background: var(--bg-primary);
+  position: relative;
+}
+
+.problem-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  margin-top: var(--space-8);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 var(--space-8);
+}
+
+.problem-card,
+.solution-card {
+  background: var(--bg-primary);
+  padding: var(--space-8);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-xl);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  transition: var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.problem-card:hover,
+.solution-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.12);
+}
+
+.problem-icon,
+.solution-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-5);
+  box-shadow: var(--shadow-md);
+}
+
+.problem-icon {
+  background: linear-gradient(135deg, #FFE8E8 0%, #FFDDDD 100%);
+}
+
+.solution-icon {
+  background: var(--gradient-sage);
+}
+
+.problem-icon i {
+  color: #D97B7B;
+  font-size: 2rem;
+}
+
+.solution-icon i {
+  color: var(--color-accent-sage);
+  font-size: 2rem;
+}
+
+.problem-card h3,
+.solution-card h3 {
+  margin-bottom: var(--space-4);
+  color: var(--color-primary);
+}
+
+.problem-card ul,
+.solution-card ul {
+  list-style: none;
+}
+
+.problem-card li,
+.solution-card li {
+  padding: var(--space-2) 0;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  color: var(--color-secondary);
+  line-height: 1.6;
+}
+
+.problem-card li::before {
+  content: '•';
+  color: #D97B7B;
+  font-weight: bold;
+  width: 16px;
+  flex-shrink: 0;
+}
+
+.solution-card li::before {
+  content: '✓';
+  color: var(--color-accent-sage);
+  font-weight: bold;
+  width: 16px;
+  flex-shrink: 0;
+}
+
+/* Services Grid */
+.services {
+  padding: 120px 0;
+  background: var(--gradient-section);
+  position: relative;
+  overflow: hidden;
+}
+
+.services::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: -30%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(225, 235, 230, 0.3) 0%, transparent 70%);
+  border-radius: 60% 40% 50% 30%;
+  animation: gentle-float 14s ease-in-out infinite;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 var(--space-8);
+  position: relative;
+  z-index: 2;
+}
+
+.service-card {
+  background: var(--bg-primary);
+  padding: var(--space-6);
+  border-radius: var(--radius-2xl);
+  text-align: center;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  transition: var(--transition-slow);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card:hover {
+  transform: translateY(-12px) rotate(1deg);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.15);
+}
+
+.service-card:nth-child(even) {
+  margin-top: var(--space-4);
+}
+
+.service-card:nth-child(even):hover {
+  transform: translateY(-12px) rotate(-1deg);
+}
+
+.service-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--gradient-rose);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-5);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-normal);
+}
+
+.service-icon i {
+  font-size: 2rem;
+  color: var(--color-secondary);
+}
+
+.service-card h3 {
+  margin-bottom: var(--space-3);
+  color: var(--color-primary);
+  line-height: 1.3;
+}
+
+.service-card p {
+  color: var(--color-secondary);
+  line-height: 1.6;
+  font-weight: var(--font-light);
+}
+
+/* Mobile Sections */
+@media (max-width: 768px) {
+  .problem-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card:nth-child(even) {
+    margin-top: 0;
+  }
+}
