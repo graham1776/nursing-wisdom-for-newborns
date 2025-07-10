@@ -28,7 +28,9 @@ class NavigationManager {
   private setupMobileToggle(): void {
     if (!this.hamburger || !this.navMenu) return
 
-    this.hamburger.addEventListener('click', () => {
+    this.hamburger.addEventListener('click', (e) => {
+      e.preventDefault()
+      e.stopPropagation()
       this.toggleMobileMenu()
     })
 
@@ -37,6 +39,23 @@ class NavigationManager {
       link.addEventListener('click', () => {
         this.closeMobileMenu()
       })
+    })
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement
+      if (this.state.isMenuOpen && 
+          !this.navMenu?.contains(target) && 
+          !this.hamburger?.contains(target)) {
+        this.closeMobileMenu()
+      }
+    })
+
+    // Close menu on window resize
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768 && this.state.isMenuOpen) {
+        this.closeMobileMenu()
+      }
     })
   }
 

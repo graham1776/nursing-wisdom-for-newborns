@@ -1,0 +1,299 @@
+/* Mobile-First Responsive Fixes */
+
+/* Enhanced Mobile Navigation */
+@media (max-width: 768px) {
+  /* Ensure hamburger menu is visible and accessible */
+  .hamburger {
+    display: flex;
+    z-index: 1001;
+    padding: var(--space-2);
+    min-height: 44px;
+    min-width: 44px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hamburger .bar {
+    width: 22px;
+    height: 2px;
+  }
+
+  /* Improve mobile menu */
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 80px;
+    flex-direction: column;
+    background: rgba(254, 254, 254, 0.98);
+    backdrop-filter: blur(20px);
+    width: 100%;
+    text-align: center;
+    transition: left 0.3s ease;
+    box-shadow: 0 10px 27px rgba(89, 77, 71, 0.15);
+    padding: var(--space-6) 0;
+    gap: var(--space-4);
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-link {
+    font-size: 1.1rem;
+    padding: var(--space-2) var(--space-4);
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Mobile hero improvements */
+  .hero {
+    padding: 100px 0 var(--space-8);
+    min-height: auto;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    padding: 0 var(--space-4);
+  }
+
+  .hero-content {
+    text-align: center;
+    order: 2;
+  }
+
+  .hero-image {
+    order: 1;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+    margin-bottom: var(--space-4);
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: var(--space-6);
+  }
+
+  .hero-features {
+    flex-direction: column;
+    gap: var(--space-2);
+    margin-bottom: var(--space-6);
+  }
+
+  .feature-item {
+    padding: var(--space-2) var(--space-3);
+    font-size: 0.9rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: var(--space-3);
+    width: 100%;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    justify-content: center;
+    min-height: 48px;
+    font-size: 1rem;
+  }
+}
+
+/* Improved Mobile Typography */
+@media (max-width: 768px) {
+  .section-header h2 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+    margin-bottom: var(--space-3);
+  }
+
+  .section-header p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+
+  /* Better mobile spacing */
+  .section {
+    padding: 80px 0;
+  }
+
+  .container {
+    padding: 0 var(--space-4);
+  }
+}
+
+/* Mobile Form Improvements */
+@media (max-width: 768px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    padding: 0 var(--space-4);
+  }
+
+  .contact-form {
+    padding: var(--space-5);
+  }
+
+  .contact-form h3 {
+    font-size: 1.8rem;
+    margin-bottom: var(--space-4);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 16px; /* Prevents zoom on iOS */
+    min-height: 44px;
+    padding: var(--space-3);
+  }
+
+  .form-group textarea {
+    min-height: 100px;
+  }
+
+  .btn {
+    min-height: 48px;
+    font-size: 1rem;
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .contact-method {
+    padding: var(--space-3);
+    gap: var(--space-2);
+  }
+
+  .contact-method i {
+    width: 50px;
+    height: 50px;
+    font-size: 1.4rem;
+  }
+}
+
+/* Mobile Card Improvements */
+@media (max-width: 768px) {
+  .service-card,
+  .pricing-card,
+  .difference-item,
+  .county-card {
+    margin-top: 0 !important; /* Remove staggered layout on mobile */
+    padding: var(--space-4);
+  }
+
+  .service-card:hover,
+  .pricing-card:hover,
+  .difference-item:hover,
+  .county-card:hover {
+    transform: translateY(-5px); /* Reduce hover movement on mobile */
+  }
+
+  .pricing-card.featured {
+    transform: none !important;
+    margin-top: 0;
+  }
+
+  .pricing-card.featured:hover {
+    transform: translateY(-5px) !important;
+  }
+}
+
+/* Ultra Small Mobile Devices */
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-text h2,
+  .contact-info h2 {
+    font-size: 2rem;
+  }
+
+  /* Single column layouts */
+  .problem-grid,
+  .about-content,
+  .premie-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  /* Improved button spacing */
+  .pricing-card,
+  .service-card {
+    padding: var(--space-3);
+  }
+
+  .container {
+    padding: 0 var(--space-3);
+  }
+}
+
+/* Touch Target Improvements */
+@media (max-width: 768px) {
+  /* Ensure all interactive elements are at least 44px */
+  .btn,
+  .nav-link,
+  .contact-method,
+  input,
+  select,
+  textarea {
+    min-height: 44px;
+  }
+
+  /* Improve link spacing */
+  .footer-section ul li {
+    margin-bottom: var(--space-3);
+  }
+
+  .footer-section ul li a {
+    padding: var(--space-1) 0;
+    display: block;
+  }
+
+  /* Better social links on mobile */
+  .social-links {
+    justify-content: center;
+    gap: var(--space-4);
+  }
+
+  .social-links a {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* Reduce Motion for Mobile Users */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Landscape Mobile Phones */
+@media (max-width: 896px) and (orientation: landscape) {
+  .hero {
+    padding: 60px 0 var(--space-6);
+    min-height: auto;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+    align-items: center;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+}
